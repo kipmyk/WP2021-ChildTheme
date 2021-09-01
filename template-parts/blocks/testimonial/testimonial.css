@@ -1,0 +1,6 @@
+.testimonial-blockquote span{
+	display: block !important;
+}
+.is-admin{
+	background-color: red !important;
+}
