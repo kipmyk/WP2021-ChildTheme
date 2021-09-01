@@ -15,3 +15,9 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'	=> false
 	));
 }
+
+add_filter('acf/format_value/name=number_field', 'fix_number', 20, 3);
+function fix_number($value, $post_id, $field) {
+  $value = number_format($value);
+  return $value;
+}
