@@ -18,23 +18,39 @@ get_header();
 			
 <div class="container--full">
 
-<?php
-// get the current taxonomy term
-$term = get_queried_object();
+<?php $term = get_queried_object();?>
+<?php $poster = get_field('artist_poster', $term);?>
+<?php $birth = get_field('birth_date', $term);?>
+<?php $death = get_field('death_date', $term);?>
+<?php $origin = get_field('origin', $term);?>
+<?php $active = get_field('years_active', $term);?>
+<?php $poster_meta = get_field('artist_poster_metadata', $term);?>
+<?php $poster_url = get_field('artist_poster_url', $term);?>
 
-$image = get_field( 'rechtsgebiet-title-image', $term);
+<?php get_header();?>
 
-if ( $image ) : ?>
-    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-<?php endif; ?>
+<div class="container">
+<section id="main">
 
-<?php 
-$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-if ($term->parent == 0) { 
-$terms = get_terms( 'leading_categories', 'parent='.$term->term_id ); } 
-else { $terms = get_terms( 'leading_categories', 'parent='.$term->parent ); } 
-foreach($terms as $term) { 
-echo '<div class="snack_type"><a href="' . get_term_link( $term ) . '">' . $term->name . '</a></div>'; 
-echo '<img src="' . get_field('rechtsgebiet-title-image', $term->taxonomy . '_' . $term->term_id) . '"/>';
-}
-?>
+
+<p><?php echo $birth?></p>
+<p><?php echo $death?></p>
+<p><?php echo $origin?></p>
+<p><?php echo $active?></p>
+
+<a href="<?php echo $poster_url ;?>"><?php echo $poster_url ;?></a>
+
+<p><?php echo $poster_meta;?></p>
+
+<div class="card">
+<div class="artist-img-container">
+<img src="<?php echo $poster['url'];?>" alt="">
+</div>
+</div>
+<?php get_template_part('includes/section','archive-artists');?>
+<?php previous_posts_link();?>
+<?php next_posts_link();?>
+</section>
+</div>
+
+<?php get_footer();?>
