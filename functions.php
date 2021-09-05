@@ -21,3 +21,7 @@ function fix_number($value, $post_id, $field) {
   $value = number_format($value);
   return $value;
 }
+
+	  $fields = get_field_object( 'page_subtitle' );
+	  
+	  print_r($fields);
