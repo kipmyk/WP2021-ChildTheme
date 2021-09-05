@@ -98,4 +98,11 @@ get_header();
 <!-- end content-section -->
 <div class="clearfix spacing-100"></div>
 
-<?php endif; endwhile; ?>
+<?php endif; endwhile; 
+	  
+	  $fields = get_field_object( 21805 );
+	  echo '<pre>';
+	  print_r($fields);
+	  echo '</pre>';
+	  
+	  
