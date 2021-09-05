@@ -41,7 +41,7 @@ get_header();
 <a href="<?php echo $poster_url ;?>"><?php echo $poster_url ;?></a>
 
 <p><?php echo $poster_meta;?></p>
-
+<?php echo term_description($term, "testing-category"); ?>
 <div class="card">
 <div class="artist-img-container">
 <img src="<?php echo $poster['url'];?>" alt="">
