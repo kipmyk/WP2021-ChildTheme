@@ -146,7 +146,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "all"
+                "value": "artists"
             }
         ]
     ],
@@ -158,5 +158,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1630647182
+    "modified": 1630911210
 }
