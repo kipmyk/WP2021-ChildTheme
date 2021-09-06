@@ -1130,6 +1130,13 @@
                 "operator": "==",
                 "value": "theme-general-settings"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1142,5 +1149,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1630579815
+    "modified": 1630916489
 }
