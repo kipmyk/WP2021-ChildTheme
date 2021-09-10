@@ -22,4 +22,57 @@ function fix_number($value, $post_id, $field) {
   return $value;
 }
 
+add_action('acf/input/admin_footer', 'my_acf_admin_footer');
+function my_acf_admin_footer() {
+    ?>
+    <style type="text/css">
+        /* CSS here. */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button { 
+        	-webkit-appearance: none !important;
+        }
+    </style>
+    <script type="text/javascript">
+    (function( $ ){
+        // Javascript here.
+    })(jQuery);
+    </script>
+    <?php
+}
 
+add_action('acf/init', 'my_acf_form_init');
+function my_acf_form_init() {
+
+    // Check function exists.
+    if( function_exists('acf_register_form') ) {
+
+        // Register form.
+        acf_register_form(array(
+            'id'       => 'new-event',
+            'post_id'  => 'new_post',
+            'new_post' => array(
+                'post_type'   => 'post',
+                'post_status' => 'draft'
+            ),
+            'post_title'  => true,
+            'post_content'=> true,
+        ));
+    }
+}
+
+add_action('acf/init', 'my_acf_blocks_init');
+function my_acf_blocks_init() {
+
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // Register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'testimonial',
+            'title'             => __('Testimonial'),
+            'description'       => __('A custom testimonial block.'),
+            'render_template'   => 'template-parts/blocks/testimonial/testimonial.php',
+            'category'          => 'formatting',
+        ));
+    }
+}
