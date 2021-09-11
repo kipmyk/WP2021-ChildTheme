@@ -1,12 +1,12 @@
-<?php 
+<?php
 	 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-	 function my_theme_enqueue_styles() { 
- 		  wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' ); 
- 		  } 
+	 function my_theme_enqueue_styles() {
+ 		  wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+ 		  }
 
 // // options page
 if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme General Settings',
 		'menu_title'	=> 'Theme Settings',
@@ -28,7 +28,7 @@ function my_acf_admin_footer() {
     <style type="text/css">
         /* CSS here. */
         input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button { 
+        input[type=number]::-webkit-outer-spin-button {
         	-webkit-appearance: none !important;
         }
     </style>
@@ -75,4 +75,26 @@ function my_acf_blocks_init() {
             'category'          => 'formatting',
         ));
     }
+}
+
+add_action( 'woocommerce_order_status_changed', 'action_function_name_9201', 1, 3 );
+
+function action_function_name_9201( $id, $status_transition_from, $status_transition_to ){
+
+    // $current_user = wp_get_current_user();
+		//
+		// print_r($status_transition_from);
+
+    $row = [
+        'field_613b01a0fd845' => 'test',
+        // 'timestamp' => date("Y-m-d H:i:s"),
+        // 'timestamp' => "",
+        // 'user' => $current_user->ID,
+    ];
+
+    //ray( get_field('field_613b0194fd844', 22031) ); // debug dump
+
+    add_row('field_613b0194fd844', $row, 22031);
+
+    //ray( get_field('field_613b0194fd844', 22031) ); // debug dump 2
 }
