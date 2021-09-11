@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,7 +10,7 @@
  * @version 1.0
  */
 
-get_header(); 
+get_header();
 
 ?>
 
@@ -31,7 +31,7 @@ if( have_rows('flexible') ):
             // Do something...
 
         // Case: Download layout.
-        elseif( get_row_layout() == 'download' ): 
+        elseif( get_row_layout() == 'download' ):
             $file = get_sub_field('file');
             // Do something...
 
