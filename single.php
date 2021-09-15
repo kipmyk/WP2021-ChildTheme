@@ -16,31 +16,37 @@ get_header();
 
 <main id="site-content" role="main">
   <div class="entry-content" style="margin: 200px !important;">
-<?php
+<?php if ( have_rows( 'group_1' ) ) : ?>
+	<?php while ( have_rows( 'group_1' ) ) :
+		the_row(); ?>
+		
+<?php if ( have_rows( 'group_2' ) ) : ?>
+	<?php while ( have_rows( 'group_2' ) ) :
+		the_row(); ?>
+		
+		<?php if ( have_rows( 'group_3' ) ) : ?>
+	<?php while ( have_rows( 'group_3' ) ) :
+		the_row(); ?>
+		
+		<?php if ( $testing = get_sub_field( 'testing' ) ) : ?>
+			<?php echo esc_html( $testing ); ?>
+		<?php endif; ?>
+	  
+	  <?php if ( $colors = get_sub_field( 'colors' ) ) : ?>
+			<?php if( $colors ): ?>
+<ul>
+    <?php foreach( $colors as $color ): ?>
+        <li><span class="color-<?php echo $color['value']; ?>"><?php echo $color['label']; ?></span></li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+		<?php endif; ?>
 
-// Check value exists.
-if( have_rows('flexible') ):
+	<?php endwhile; ?>
+<?php endif; ?>
 
-    // Loop through rows.
-    while ( have_rows('flexible') ) : the_row();
+	<?php endwhile; ?>
+<?php endif; ?>
 
-        // Case: Paragraph layout.
-        if( get_row_layout() == 'paragraph' ):
-            $text = get_sub_field('text');
-            echo $text;
-            // Do something...
-
-        // Case: Download layout.
-        elseif( get_row_layout() == 'download' ):
-            $file = get_sub_field('file');
-            // Do something...
-
-        endif;
-
-    // End loop.
-    endwhile;
-
-// No value.
-else :
-    // Do something...
-endif;
+	<?php endwhile; ?>
+<?php endif; ?>
