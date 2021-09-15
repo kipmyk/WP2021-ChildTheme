@@ -82,3 +82,42 @@ add_filter( 'the_excerpt', function( $excerpt ) {
 
     return $excerpt . $your_field;
 } );
+
+add_action('acf/validate_save_post', 'my_acf_validate_save_post');
+function my_acf_validate_save_post() {
+
+// Remove all errors if user is an administrator.
+if( current_user_can('manage_options') ) {
+acf_reset_validation_errors();
+}
+
+// Require custom input value.
+// where field_6140972ecc8d8 is your field
+if( empty($_POST['acf']['field_6140972ecc8d8']) ) {
+acf_add_validation_error( $_POST['acf']['field_6140972ecc8d8'], 'Please check this input to proceed' );
+}
+}
+
+
+/*
+ * https://www.advancedcustomfields.com/resources/acf-validate_value/
+ */
+add_filter('acf/validate_value/name=editor', 'my_acf_validate_value', 10, 4);
+function my_acf_validate_value( $valid, $value, $field, $input ){
+
+// bail early if value is already invalid
+if( !$valid ) {
+
+    return $valid;
+
+}
+	if(empty($valid))
+	{
+		    $valid = 'Image must be at least 960px wide';
+	}
+
+    
+    // return
+    return $valid;
+
+}
