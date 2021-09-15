@@ -77,24 +77,8 @@ function my_acf_blocks_init() {
     }
 }
 
-add_action( 'woocommerce_order_status_changed', 'action_function_name_9201', 1, 3 );
+add_filter( 'the_excerpt', function( $excerpt ) {
+    $your_field = get_post_meta( get_the_ID(), 'my_field', true );
 
-function action_function_name_9201( $id, $status_transition_from, $status_transition_to ){
-
-    // $current_user = wp_get_current_user();
-		//
-		// print_r($status_transition_from);
-
-    $row = [
-        'field_613b01a0fd845' => 'test',
-        // 'timestamp' => date("Y-m-d H:i:s"),
-        // 'timestamp' => "",
-        // 'user' => $current_user->ID,
-    ];
-
-    //ray( get_field('field_613b0194fd844', 22031) ); // debug dump
-
-    add_row('field_613b0194fd844', $row, 22031);
-
-    //ray( get_field('field_613b0194fd844', 22031) ); // debug dump 2
-}
+    return $excerpt . $your_field;
+} );
