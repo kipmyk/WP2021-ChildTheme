@@ -6,9 +6,9 @@
             "key": "field_6140972ecc8d8",
             "label": "editor",
             "name": "editor",
-            "type": "wysiwyg",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -16,105 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_6141ac5e19278",
-            "label": "Group 1",
-            "name": "group_1",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6141ac6c19279",
-                    "label": "Group 2",
-                    "name": "group_2",
-                    "type": "group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6141ac831927a",
-                            "label": "Group 3",
-                            "name": "group_3",
-                            "type": "group",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_6141ac921927b",
-                                    "label": "testing",
-                                    "name": "testing",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_6141ad92451e8",
-                                    "label": "colors",
-                                    "name": "colors",
-                                    "type": "checkbox",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "red": "Red",
-                                        "blue": "Blue",
-                                        "green": "Green"
-                                    },
-                                    "allow_custom": 0,
-                                    "default_value": [],
-                                    "layout": "vertical",
-                                    "toggle": 0,
-                                    "return_format": "value",
-                                    "save_custom": 0
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -134,5 +39,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631694439
+    "modified": 1631701627
 }
