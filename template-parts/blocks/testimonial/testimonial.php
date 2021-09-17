@@ -9,9 +9,9 @@
  */
 
 // Block preview
-if( !empty( $block['data']['__is_preview'] ) ) { ?>
+if( !empty( $block['data']['is_preview'] ) ) { ?>
 	<figure>
-		<img src="https://placeimg.com/150/150/animals" alt="">
+		<img src="https://placeimg.com/150/150/animals" alt="Animals">
 	</figure>
 <?php } ?>
 
