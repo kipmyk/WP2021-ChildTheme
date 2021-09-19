@@ -857,13 +857,6 @@
                 "operator": "==",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
         ]
     ],
     "menu_order": 0,
@@ -888,5 +881,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1631859796
+    "modified": 1632063831
 }
