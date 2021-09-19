@@ -20,6 +20,24 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6144297e0a8a7",
+            "label": "users",
+            "name": "users",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "array"
         }
     ],
     "location": [
@@ -39,5 +57,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631701627
+    "modified": 1631857034
 }
