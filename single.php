@@ -50,3 +50,17 @@ get_header();
 
 	<?php endwhile; ?>
 <?php endif; ?>
+	  
+<?php $founders = get_field( 'founders' ); 
+if( $founders ): ?>
+<ul class="volunteers-list">
+    <?php foreach( $founders as $founder ): 
+	$avatar = get_avatar_url($founder->ID);
+	?>
+        <li>
+            <img src="<?php echo esc_attr(get_avatar_url($founder->ID)); ?>" alt="author-avatar" />
+            <a href="<?php echo esc_attr($founder->user_url); ?>"><?php echo $founder->display_name; ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

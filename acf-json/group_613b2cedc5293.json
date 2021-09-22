@@ -38,6 +38,24 @@
             "allow_null": 0,
             "multiple": 0,
             "return_format": "array"
+        },
+        {
+            "key": "field_61482f5bb62b0",
+            "label": "founders",
+            "name": "founders",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object"
         }
     ],
     "location": [
@@ -57,5 +75,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631857034
+    "modified": 1632120708
 }
